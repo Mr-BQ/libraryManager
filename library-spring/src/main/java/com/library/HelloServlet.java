@@ -1,4 +1,4 @@
-package com.example.library_spring;
+package com.library;
 
 import java.io.*;
 import javax.servlet.http.*;
