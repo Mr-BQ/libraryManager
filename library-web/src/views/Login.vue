@@ -14,14 +14,14 @@
         <div class="inputarea">
           <div class="inputUsername">
             <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" placeholder="Username">
+            <input type="text" class="form-control" id="username" placeholder="Username" v-model="username">
           </div>
           <div class="inputPassword">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password">
+            <input type="password" class="form-control" id="password" placeholder="Password" v-model="password">
           </div>
           <div class="signin">
-            <button type="button" class="btn btn-success">Sign in</button>
+            <button type="button" class="btn btn-success" @click="signin">Sign in</button>
           </div>
         </div>
       </div>
@@ -30,8 +30,23 @@
 </template>
 
 <script>
+import {checkin} from "@/network/login";
+
 export default {
-  name: "Login"
+  name: "Login",
+  data(){
+    return{
+      username:'',
+      password:''
+    }
+  },
+  methods:{
+    signin(){
+      checkin(this.username,this.password).then(res=>{
+        
+      })
+    }
+  }
 }
 </script>
 
