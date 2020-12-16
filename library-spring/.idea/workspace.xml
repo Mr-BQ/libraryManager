@@ -10,13 +10,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be37c803-2ad1-4795-b4f6-454e2d5f767e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2ce20d61-a97f-4126-a131-246d943d386c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2ce20d61-a97f-4126-a131-246d943d386c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/library-spring.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/HelloServlet.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/library/HelloServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/HelloServlet.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/po/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/po/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +37,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.xml" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="LogFilters">
     <option name="FILTER_ERRORS" value="false" />
@@ -85,17 +91,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 8.5.32" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.32" ALTERNATIVE_JRE_ENABLED="false">
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
       <option name="UPDATE_CLASSES_ON_FRAME_DEACTIVATION" value="true" />
@@ -197,7 +192,9 @@
       <workItem from="1608028456942" duration="10180000" />
       <workItem from="1608040877494" duration="405000" />
       <workItem from="1608041743213" duration="1148000" />
-      <workItem from="1608042925350" duration="630000" />
+      <workItem from="1608042925350" duration="691000" />
+      <workItem from="1608043664840" duration="166000" />
+      <workItem from="1608085333889" duration="6098000" />
     </task>
     <servers />
   </component>

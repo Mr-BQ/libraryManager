@@ -8,16 +8,60 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @Controller
 public class UserController {
     @Autowired
     private UserService userService;
 
+    @RequestMapping("/findAllUser")
+    @ResponseBody
+    public List<User> findAllUser(){
+        List<User> users= userService.findAllUser();
+        return users;
+    }
+
     @RequestMapping("/findUserByCardNum")
     @ResponseBody
     public User findUserByCardNum(String cardnum){
-        System.out.println("findUserByCardNum" + " cardnum " + cardnum);
         User user = userService.findUserByCardNum(cardnum);
         return user;
+    }
+
+
+    @RequestMapping("/findUserByUserName")
+    @ResponseBody
+    public List<User> findUserByUserName(String username){
+        List<User> users = userService.findUserByUserName(username);
+        return users;
+    }
+
+    @RequestMapping("/findUserByUserSex")
+    @ResponseBody
+    public List<User> findUserByUserSex(String usersex){
+        List<User> users = userService.findUserByUserSex(usersex);
+        return users;
+    }
+
+    @RequestMapping("/findUserByUserDepa")
+    @ResponseBody
+    public List<User> findUserByUserDepa(String userdepa){
+        List<User> users = userService.findUserByUserDepa(userdepa);
+        return users;
+    }
+
+    @RequestMapping("/findUserByUserClass")
+    @ResponseBody
+    public List<User> findUserByUserClass(String userclass) {
+        List<User> users = userService.findUserByUserClass(userclass);
+        return users;
+    }
+
+    @RequestMapping("/findUserByGrade")
+    @ResponseBody
+    public List<User> findUserByGrade(String grade){
+        List<User> users = userService.findUserByGrade(grade);
+        return users;
     }
 }

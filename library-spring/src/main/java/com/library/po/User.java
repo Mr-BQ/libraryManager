@@ -7,6 +7,7 @@ public class User {
     private String userSex;
     private String userDepa;
     private String userClass;
+    private String Grade;
     private String userBorrowNum;
 
     public Integer getUserid() {
@@ -57,6 +58,14 @@ public class User {
         this.userClass = userClass;
     }
 
+    public String getGrade() {
+        return Grade;
+    }
+
+    public void setGrade(String grade) {
+        Grade = grade;
+    }
+
     public String getUserBorrowNum() {
         return userBorrowNum;
     }
@@ -74,6 +83,7 @@ public class User {
                 ", userSex='" + userSex + '\'' +
                 ", userDepa='" + userDepa + '\'' +
                 ", userClass='" + userClass + '\'' +
+                ", Grade='" + Grade + '\'' +
                 ", userBorrowNum='" + userBorrowNum + '\'' +
                 '}';
     }
