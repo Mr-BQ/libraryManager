@@ -4,12 +4,14 @@ import com.library.po.User;
 import com.library.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
+@CrossOrigin(origins = "*", maxAge = 3600)
 @Controller
 public class UserController {
     @Autowired
@@ -63,5 +65,12 @@ public class UserController {
     public List<User> findUserByGrade(String grade){
         List<User> users = userService.findUserByGrade(grade);
         return users;
+    }
+
+    @RequestMapping("/checkin")
+    @ResponseBody
+    public String checkin(String username,String password){
+        System.out.println("username = " + username + " , password = " + password);
+        return "yes";
     }
 }

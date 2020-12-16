@@ -12,4 +12,5 @@ public interface UserService {
     public List<User> findUserByUserDepa(String userdepa);
     public List<User> findUserByUserClass(String userclass);
     public List<User> findUserByGrade(String grade);
+
 }
