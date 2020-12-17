@@ -3,26 +3,49 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const homeroutes=[
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location) {
+  return originalPush.call(this, location).catch(err => err)
+}
+
+const originalReplace = VueRouter.prototype.replace
+VueRouter.prototype.replace = function replace(location) {
+  return originalReplace.call(this, location).catch(err => err)
+}
+
+const readerroutes=[
   {
-    path:'reader',
-    component:() => import('@/views/home/childviews/Reader')
+    path:'/',
+    redirect:'allreaders'
   },
   {
-    path:'book',
-    component:() => import('@/views/home/childviews/Book')
-  },
-  {
-    path:'borrow',
-    component:() => import('@/views/home/childviews/Borrow')
+    path:'allreaders',
+    component:() => import('@/views/reader/AllReaders')
   }
 ]
 
+const homeroutes=[
+  {
+    path:'reader',
+    component:() => import('@/views/reader/Reader'),
+    children:readerroutes
+  },
+  {
+    path:'book',
+    component:() => import('@/views/book/Book')
+  },
+  {
+    path:'borrow',
+    component:() => import('@/views/borrow/Borrow')
+  }
+]
+
+
 const routes = [
-  // {
-  //   path: '/',
-  //   redirect:'/login'
-  // },
+  {
+    path: '/',
+    redirect:'/login'
+  },
   {
     path: '/login',
     name: 'login',
@@ -34,7 +57,7 @@ const routes = [
   {
     path: '/home',
     name: 'home',
-    component: () => import('@/views/home/Home'),
+    component: () => import('@/views/Home'),
     children:homeroutes
   }
 

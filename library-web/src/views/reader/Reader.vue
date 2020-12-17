@@ -1,6 +1,7 @@
 <template>
   <div class="reader">
-    <h1>reader management</h1>
+    <router-view>
+    </router-view>
   </div>
 </template>
 
