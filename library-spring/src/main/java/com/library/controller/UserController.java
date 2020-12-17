@@ -1,5 +1,6 @@
 package com.library.controller;
 
+import com.library.po.Manager;
 import com.library.po.User;
 import com.library.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -70,7 +71,9 @@ public class UserController {
     @RequestMapping("/checkin")
     @ResponseBody
     public String checkin(String username,String password){
-        System.out.println("username = " + username + " , password = " + password);
-        return "yes";
+        System.out.println("username = " + username + " , password = " +password );
+        Manager manager = userService.checkin(username,password);
+        System.out.println("manager = " + manager);
+        return manager == null ? "no" : "yes";
     }
 }

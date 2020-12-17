@@ -31,7 +31,9 @@
         select * from user where grade = #{grade}
     </select>
 
-
+    <select id="checkin"  resultType="Manager">
+        select * from manager where username = #{arg0} and password = #{arg1}
+    </select>
 
 
 

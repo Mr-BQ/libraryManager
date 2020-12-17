@@ -1,6 +1,7 @@
 package com.library.service.impl;
 
 import com.library.dao.UserDao;
+import com.library.po.Manager;
 import com.library.po.User;
 import com.library.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -50,6 +51,9 @@ public class UserServiceImpl implements UserService {
         return this.userDao.findUserByGrade(grade);
     }
 
-
+    @Override
+    public Manager checkin(String username, String password){
+        return this.userDao.checkin(username,password);
+    }
 
 }
