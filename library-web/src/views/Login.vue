@@ -6,7 +6,9 @@
       </div>
       <div class="loginform">
         <div class="logo">
-          <img src="@/assets/img/sweat.png" alt="chabuduodele">
+          <img src="@/assets/img/sweat.png" alt="chabuduodele" v-show="logopic===0">
+          <img src="@/assets/img/face-with-rolling-eyes.png" alt="chabuduodele" v-show="logopic===1">
+          <img src="@/assets/img/loudly-crying-face.png" alt="chabuduodele" v-show="logopic===2">
         </div>
         <div class="text">
           <p>Sign in to Library Manage System</p>
@@ -14,15 +16,18 @@
         <div class="inputarea">
           <div class="inputUsername">
             <label for="username">Username</label>
-            <input type="text" class="form-control" id="username" placeholder="Username" v-model="username">
+            <input type="text" class="form-control" id="username" placeholder="Username" v-model="username"
+                   @focus="logopic=0;wronginput=false">
           </div>
           <div class="inputPassword">
             <label for="password">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Password" v-model="password">
+            <input type="password" class="form-control" id="password" placeholder="Password" v-model="password"
+                   @focus="logopic=1;wronginput=false" @blur="logopic=0">
           </div>
           <div class="signin">
             <button type="button" class="btn btn-success" @click="signin">Sign in</button>
           </div>
+          <div class="alert alert-danger" role="alert" v-show="wronginput">wrong username or password !</div>
         </div>
       </div>
     </div>
@@ -37,15 +42,23 @@ export default {
   data(){
     return{
       username:'',
-      password:''
+      password:'',
+      logopic:0,
+      wronginput:false
     }
   },
   methods:{
     signin(){
       checkin(this.username,this.password).then(res=>{
-        
+        if(res == "yes"){
+          alert("sign in successfully！")
+        }else{
+          this.wronginput = true;
+          this.logopic = 2;
+        }
       })
     }
+
   }
 }
 </script>
@@ -123,6 +136,10 @@ export default {
         button{
           width: 100%;
         }
+      }
+      .alert-danger{
+        width: 90%;
+        text-align: center;
       }
     }
   }
