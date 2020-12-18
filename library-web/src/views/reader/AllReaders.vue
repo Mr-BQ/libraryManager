@@ -15,7 +15,7 @@
       </thead>
       <tbody>
         <tr v-for="(item,index) in list" :key="index">
-        <td>{{item['userid']}}</td>
+        <td>{{index+1}}</td>
         <td>{{item['userCardNum']}}</td>
         <td>{{item['userName']}}</td>
         <td>{{item['userSex']}}</td>
@@ -44,8 +44,6 @@ export default {
     getallreaders().then(res=>{
       this.list = res
       console.log(this.list);
-      // console.log('res = ' + res)
-      // console.log('list = ' + this.list)
     })
   }
 }
@@ -54,6 +52,8 @@ export default {
 <style scoped lang="less">
 
   .table{
-    //width: 100%;
+    thead{
+      font-size: 16px;
+    }
   }
 </style>

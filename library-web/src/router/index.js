@@ -13,30 +13,23 @@ VueRouter.prototype.replace = function replace(location) {
   return originalReplace.call(this, location).catch(err => err)
 }
 
-const readerroutes=[
-  {
-    path:'/',
-    redirect:'allreaders'
-  },
-  {
-    path:'allreaders',
-    component:() => import('@/views/reader/AllReaders')
-  }
-]
 
 const homeroutes=[
   {
-    path:'reader',
-    component:() => import('@/views/reader/Reader'),
-    children:readerroutes
+    path:'/',
+    redirect:'reader/allreaders'
   },
   {
-    path:'book',
-    component:() => import('@/views/book/Book')
+    path:'reader/allreaders',
+    component:() => import('@/views/reader/AllReaders')
   },
   {
-    path:'borrow',
-    component:() => import('@/views/borrow/Borrow')
+    path:'reader/queryreader',
+    component:() => import('@/views/reader/QueryReader')
+  },
+  {
+    path:'reader/addreader',
+    component:() => import('@/views/reader/AddReader')
   }
 ]
 

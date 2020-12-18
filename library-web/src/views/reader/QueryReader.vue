@@ -1,12 +1,12 @@
 <template>
-  <div class="borrow">
-    <h1>borrow management</h1>
-  </div>
+<div class="queryreader">
+  <h1>query reader</h1>
+</div>
 </template>
 
 <script>
 export default {
-  name: "Borrow"
+name: "QueryReader"
 }
 </script>
 

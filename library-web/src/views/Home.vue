@@ -64,14 +64,15 @@ export default {
   methods:{
     listclick(index){
       this.currentactive = index
-      switch (index){
-        case 0:this.$router.replace('/home/reader');break;
-        case 1:this.$router.replace('/home/book');break;
-        case 2:this.$router.replace('/home/borrow');break;
-      }
+
     },
     sublistclick(index){
       this.subactive = index
+      switch (index){
+        case '00':this.$router.replace('/home/reader/allreaders');break;
+        case '01':this.$router.replace('/home/reader/queryreader');break;
+        case '02':this.$router.replace('/home/reader/addreader');break;
+      }
     }
   }
 }
