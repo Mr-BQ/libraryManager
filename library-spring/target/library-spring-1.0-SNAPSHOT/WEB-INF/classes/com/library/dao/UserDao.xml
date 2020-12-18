@@ -35,6 +35,10 @@
         select * from manager where username = #{arg0} and password = #{arg1}
     </select>
 
+    <insert id="addUser" parameterType="User" >
+        insert into user values(null,#{userCardNum},#{userName},#{userSex},#{userDepa},#{userClass},#{Grade},5)
+    </insert>
+
 
 
 </mapper>

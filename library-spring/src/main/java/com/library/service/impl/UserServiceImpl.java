@@ -56,4 +56,9 @@ public class UserServiceImpl implements UserService {
         return this.userDao.checkin(username,password);
     }
 
+    @Override
+    public int addUser(User user){
+        return this.userDao.addUser(user);
+    }
+
 }

@@ -11,11 +11,13 @@
   <component name="ChangeListManager">
     <list default="true" id="be37c803-2ad1-4795-b4f6-454e2d5f767e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library-web/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library-web/src/views/home/Home.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library-web/src/views/home/childviews/Book.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library-web/src/views/home/childviews/Borrow.vue" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library-web/src/views/home/childviews/Reader.vue" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library-web/src/network/reader.js" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/network/reader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library-web/src/views/reader/AddReader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/views/reader/AddReader.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +197,9 @@
       <workItem from="1608085333889" duration="7006000" />
       <workItem from="1608134670721" duration="2796000" />
       <workItem from="1608173488414" duration="4698000" />
-      <workItem from="1608216561136" duration="1292000" />
+      <workItem from="1608216561136" duration="2117000" />
+      <workItem from="1608265936011" duration="2845000" />
+      <workItem from="1608300966445" duration="2583000" />
     </task>
     <servers />
   </component>

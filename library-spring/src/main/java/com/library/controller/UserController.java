@@ -76,4 +76,18 @@ public class UserController {
         System.out.println("manager = " + manager);
         return manager == null ? "no" : "yes";
     }
+
+    @RequestMapping("/checkcardnum")
+    @ResponseBody
+    public String checkcardnum(String cardnum){
+        User user = userService.findUserByCardNum(cardnum);
+        return user == null ? "no" : "yes";
+    }
+
+    @RequestMapping("/adduser")
+    @ResponseBody
+    public int adduser(User user){
+        return userService.addUser(user);
+    }
+
 }
