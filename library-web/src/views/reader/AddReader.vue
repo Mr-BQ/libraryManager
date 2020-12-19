@@ -1,6 +1,6 @@
 <template>
   <div class="addreader">
-    <div class="text">Now you are adding a reader to the reader database , please input the reader's information below.</div>
+    <div class="text" >Now you are <strong>adding</strong> a reader to the reader database , please input the reader's information below.</div>
     <div class="input">
       <div class="form-group cardnum">
         <div class="inputarea">
@@ -27,7 +27,7 @@
           </label>
           <label class="radio-inline">
             <input type="radio" name="gender" id="female" value="女" v-model="reader.gender" @blur="validategender" @focus="validating.gender=false">
-            <img src="@/assets/img/girl.png" alt="ye"> female
+            <img src="@/assets/img/girl.png" alt="girl"> female
           </label>
         </div>
         <div v-show="validating.gender && !validate.gender" class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> please choose gender!!</div>
@@ -41,14 +41,14 @@
       </div>
       <div class="form-group class">
         <div class="inputarea">
-          <label for="department">class</label>
+          <label for="class">class</label>
           <input type="text" class="form-control" id="class" placeholder="class" v-model="reader.class" @blur="validateclass" @focus="validating.class=false">
         </div>
         <div v-show="validating.class && !validate.class" class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> please input reader's class!!</div>
       </div>
       <div class="form-group grade">
         <div class="inputarea">
-          <label for="department">grade</label>
+          <label for="grade">grade</label>
           <input type="text" class="form-control" id="grade" placeholder="grade" v-model="reader.grade" @blur="validategrade" @focus="validating.grade=false">
         </div>
         <div v-show="validating.grade && !validate.grade" class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> grade must be 4 digits！！forexample:2017</div>
@@ -129,7 +129,9 @@ export default {
             this.addsuccess = true
             setTimeout(()=>{
               this.addsuccess = false
-            },1500)
+              this.$router.replace('/refresh')
+            },2500)
+
           }
         })
       }
@@ -196,6 +198,9 @@ export default {
     validated(){
       return this.validate.cardnum == '0' && this.validate.readername && this.validate.gender && this.validate.department && this.validate.class && this.validate.grade
     }
+  },
+  mounted() {
+    this.$store.commit('changeSubactive','02')
   }
 }
 </script>
@@ -299,25 +304,25 @@ export default {
 
 
   .toast{
-
     opacity: 0;
     position: fixed;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    height: 40px;
+    overflow: hidden;
+    height: 0px;
     width: 300px;
     background-color: rgba(41, 128, 185,.7);
     color: white;
     line-height: 40px;
     font-size: 20px;
     text-align: center;
-    transition: opacity 500ms ease-in-out;
+    transition: opacity 500ms;
   }
 
   .toast-show{
-
     opacity: 1;
+    height: 40px;
   }
 
 

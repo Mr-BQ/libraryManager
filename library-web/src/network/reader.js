@@ -27,3 +27,26 @@ export function adduser(user){
         }
     })
 }
+
+export function getReaderbyCardnum(cardnum){
+    return request({
+        url:'/findUserByCardNum',
+        params:{
+            cardnum
+        }
+    })
+}
+
+export function updatereader(user){
+    return post({
+        url:'/updateUser',
+        params:{
+            userCardNum:user.cardnum,
+            userDepa:user.department,
+            userClass:user.class,
+            Grade:user.grade,
+            userBorrowNum:user.borrownum
+        }
+
+    })
+}

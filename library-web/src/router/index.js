@@ -30,6 +30,10 @@ const homeroutes=[
   {
     path:'reader/addreader',
     component:() => import('@/views/reader/AddReader')
+  },
+  {
+    path:'reader/updatereader/:cardnum',
+    component:() => import('@/views/reader/UpdateReader')
   }
 ]
 
@@ -52,6 +56,11 @@ const routes = [
     name: 'home',
     component: () => import('@/views/Home'),
     children:homeroutes
+  },
+  {
+    path:'/refresh',
+    name:'refresh',
+    component:() => import('@/components/Refresh')
   }
 
 ]
