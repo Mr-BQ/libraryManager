@@ -16,4 +16,5 @@ public interface UserDao {
     public List<User> findUserByGrade(String grade);
     public Manager checkin(String username, String password);
     public int addUser(User user);
+    public int updateuser(User user);
 }

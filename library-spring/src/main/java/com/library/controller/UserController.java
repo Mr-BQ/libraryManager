@@ -90,4 +90,20 @@ public class UserController {
         return userService.addUser(user);
     }
 
+    @RequestMapping("/updateUser")
+    @ResponseBody
+    public int updateuser(User user){
+        System.out.println(user);
+        return userService.updateuser(user);
+    }
+
+    @RequestMapping("/queryUser")
+    @ResponseBody
+    public List<User> queryUser(User user){
+        System.out.println(user);
+        System.out.println(user.getUserName() == null);
+
+        return null;
+    }
+
 }

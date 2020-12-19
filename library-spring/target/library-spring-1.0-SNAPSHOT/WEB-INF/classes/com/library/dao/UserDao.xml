@@ -39,6 +39,11 @@
         insert into user values(null,#{userCardNum},#{userName},#{userSex},#{userDepa},#{userClass},#{Grade},5)
     </insert>
 
+    <update id="updateuser" parameterType="User">
+        update user set userDepa = #{userDepa},userClass = #{userClass},grade = #{Grade},userBorrowNum = #{userBorrowNum}
+        where userCardNum = #{userCardNum}
+    </update>
+
 
 
 </mapper>
