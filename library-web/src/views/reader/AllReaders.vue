@@ -145,10 +145,6 @@ export default {
     td{
       width: auto;
     }
-    thead{
-      position: fixed;
-
-    }
     tbody{
       td{
         height: 40px;

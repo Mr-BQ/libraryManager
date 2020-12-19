@@ -1,7 +1,7 @@
 <template>
   <div class="queryreader">
-    <div class="text" v-show="false">Now you are <strong>querying</strong> readers, please input the reader's information below.You must input at least one item.</div>
-    <div class="input" v-show="false">
+    <div class="text" v-show="true">Now you are <strong>querying</strong> readers, please input the reader's information below.You must input at least one item.</div>
+    <div class="input" v-show="true">
       <div class="form-group cardnum">
           <label for="cardnum">card number</label>
           <input type="text" class="form-control" id="cardnum" placeholder="card number" v-model="reader.cardnum" >
@@ -41,9 +41,9 @@
         <button  type="button" class="btn btn-primary btn-block" @click="">QUERY</button>
       </div>
     </div>
-    <div class="text" v-show="true">Find <strong>{{list.length}}</strong> records !</div>
+    <div class="text" v-show="false">Find <strong>{{list.length}}</strong> records !</div>
 
-    <div class="result">
+    <div class="result" v-show="false">
       <table class="table table-striped table-hover" v-if="list != null">
         <thead>
         <tr>
@@ -55,7 +55,6 @@
           <th>class</th>
           <th>grade</th>
           <th width="150px">borrow num</th>
-          <th class="lastcol"></th>
         </tr>
         </thead>
         <tbody>
@@ -68,19 +67,6 @@
           <td>{{item['userClass']}}</td>
           <td>{{item['grade']}}</td>
           <td>{{item['userBorrowNum']}}</td>
-          <td class="lastcol">
-            <div class="morebox">
-              <div class="updateAndDelete" v-show="index===showmore">
-                <div class="update" @click="updateclick(index)">UPDATE</div>
-                <div class="delete" @click="deleteclick(index)">DELETE</div>
-              </div>
-              <div class="more" v-show="index!==showmore">
-                <a class="btn btn-default" href="javascript:;" role="button" @click="moreclick(index)">
-                  <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
-                </a>
-              </div>
-            </div>
-          </td>
         </tr>
         </tbody>
 
@@ -92,7 +78,7 @@
 </template>
 
 <script>
-import {getallreaders} from "@/network/reader";
+import {getallreaders,queryreader} from "@/network/reader";
 
 export default {
   name: "QueryReader",
@@ -115,9 +101,9 @@ export default {
   methods:{
     queryclick(){
       this.querying = true;
-      setTimeout(()=>{
+      queryreader(this.reader).then(res=>{
 
-      },2500)
+      })
     }
   },
   mounted(){
