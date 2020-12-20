@@ -73,6 +73,9 @@ export default {
         case '00':this.$router.replace('/home/reader/allreaders');break;
         case '01':this.$router.replace('/home/reader/queryreader');break;
         case '02':this.$router.replace('/home/reader/addreader');break;
+        case '10':this.$router.replace('/home/book/allbooks');break;
+        case '11':this.$router.replace('/home/book/querybook');break;
+        case '12':this.$router.replace('/home/book/addbook');break;
       }
     }
   }

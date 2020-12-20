@@ -34,9 +34,25 @@ const homeroutes=[
   {
     path:'reader/updatereader/:cardnum',
     component:() => import('@/views/reader/UpdateReader')
+  },
+  {
+    path:'book/allbooks',
+    component:() => import('@/views/book/AllBooks')
+  },
+  {
+    path:'book/querybook',
+    component:() => import('@/views/book/QueryBook')
+  },
+  {
+    path:'book/addbook',
+    component:() => import('@/views/book/AddBook')
+  },
+  {
+    path:'book/updatebook/:isbn',
+    component:() => import('@/views/book/UpdateBook')
   }
-]
 
+]
 
 const routes = [
   {
