@@ -55,7 +55,7 @@
           <label for="borrownum">borrownum</label>
           <input type="text" class="form-control" id="borrownum" placeholder="borrow number" v-model="reader.borrownum" @blur="validateborrownum" @focus="validating.borrownum=false">
         </div>
-        <div v-show="validating.borrownum && !validate.borrownum" class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> borrow number should be 1 ~ 100!!</div>
+        <div v-show="validating.borrownum && !validate.borrownum" class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> borrow number should be 1 ~ 100 !!</div>
       </div>
       <div class="update">
         <button  type="button" class="btn btn-primary btn-block" :class="{disabled:!validated}" @click="checkinput">UPDATE</button>
@@ -165,6 +165,8 @@ export default {
       if((/^[0-9]{1,3}$/.test(this.reader.borrownum))){
         if(parseInt(this.reader.borrownum) > 0 && parseInt(this.reader.borrownum) <= 100){
           this.validate.borrownum = true
+        }else{
+          this.validate.borrownum = false
         }
       }
       else {

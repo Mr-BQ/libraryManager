@@ -1,58 +1,71 @@
 <template>
-  <div class="allreaders" >
-    <table class="table table-striped table-hover" v-if="list != null">
-      <thead>
+  <div class="allreaders">
+    <div class="content">
+      <table class="table table-striped table-hover"  v-show="list != null">
+        <thead>
         <tr>
-        <th>#</th>
-        <th>cardnum</th>
-        <th>name</th>
-        <th>gender</th>
-        <th>department</th>
-        <th>class</th>
-        <th>grade</th>
-        <th width="150px">borrow num</th>
-        <th class="lastcol"></th>
-      </tr>
-      </thead>
-      <tbody>
+          <th>#</th>
+          <th>cardnum</th>
+          <th>name</th>
+          <th>gender</th>
+          <th>department</th>
+          <th>class</th>
+          <th>grade</th>
+          <th width="150px">borrow num</th>
+          <th class="lastcol"></th>
+        </tr>
+        </thead>
+        <tbody>
         <tr v-for="(item,index) in list" :key="index">
-        <td>{{index+1}}</td>
-        <td>{{item['userCardNum']}}</td>
-        <td>{{item['userName']}}</td>
-        <td>{{item['userSex']}}</td>
-        <td>{{item['userDepa']}}</td>
-        <td>{{item['userClass']}}</td>
-        <td>{{item['grade']}}</td>
-        <td>{{item['userBorrowNum']}}</td>
-        <td class="lastcol">
-          <div class="morebox">
-            <div class="updateAndDelete" v-show="index===showmore">
-              <div class="update" @click="updateclick(index)">UPDATE</div>
-              <div class="delete" @click="deleteclick(index)">DELETE</div>
+          <td>{{index+1}}</td>
+          <td>{{item['userCardNum']}}</td>
+          <td>{{item['userName']}}</td>
+          <td>{{item['userSex']}}</td>
+          <td>{{item['userDepa']}}</td>
+          <td>{{item['userClass']}}</td>
+          <td>{{item['grade']}}</td>
+          <td>{{item['userBorrowNum']}}</td>
+          <td class="lastcol">
+            <div class="morebox">
+              <div class="updateAndDelete" v-show="index===showmore">
+                <div class="update" @click="updateclick(index)">UPDATE</div>
+                <div class="delete" @click="deleteclick(index)">DELETE</div>
+              </div>
+              <div class="more" v-show="index!==showmore">
+                <a class="btn btn-default" href="javascript:;" role="button" @click="moreclick(index)">
+                  <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+                </a>
+              </div>
             </div>
-            <div class="more" v-show="index!==showmore">
-              <a class="btn btn-default" href="javascript:;" role="button" @click="moreclick(index)">
-                <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
-              </a>
-            </div>
-          </div>
-        </td>
-      </tr>
-      </tbody>
+          </td>
+        </tr>
+        </tbody>
 
-    </table>
+      </table>
+    </div>
+    <div class="shadow" v-if="showshadow && list != null">
+        <div class="confirm">
+          <div class="warntext">CONFIRM TO DELETE READER <br/>' <strong>{{list[deleteindex].userCardNum}} {{list[deleteindex].userName}}</strong> ' ?</div>
+          <div class="choosebox">
+            <div class="yes" @click="confirmdelete">CONFIRM</div>
+            <div class="no" @click="showshadow=false">CANCEL</div>
+          </div>
+        </div>
+    </div>
   </div>
 </template>
 
 <script>
-import {getallreaders} from "@/network/reader";
+import {getallreaders,deletereader} from "@/network/reader";
 
 export default {
   name: "AllReaders",
   data(){
     return{
       list:null,
-      showmore:-1
+      showmore:-1,
+      showshadow:false,
+      deleteindex:0,
     }
   },
   mounted() {
@@ -72,7 +85,16 @@ export default {
       })
     },
     deleteclick(index){
-
+      this.deleteindex = index
+      this.showshadow = true
+    },
+    confirmdelete(){
+      deletereader(this.list[this.deleteindex].userCardNum).then(res=>{
+        console.log(res)
+        this.list.splice(this.deleteindex,1)
+        this.showshadow = false
+        this.showmore = -1
+      })
     }
   }
 }
@@ -81,63 +103,63 @@ export default {
 <style scoped lang="less">
   .allreaders{
     height: 100%;
+    position: relative;
+  }
+  .content{
+    height: 100%;
     overflow: scroll;
   }
+  .shadow{
+    position: absolute;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0,.8);
+    .confirm{
+      height: 30%;
+      width: 40%;
+      padding:20px;
+      background-color: rgba(189, 195, 199,1.0);
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      border: 5px solid rgba(52, 73, 94,1.0);
+      border-radius: 5px;
+      text-align: center;
+      .warntext{
+        font-family: Barlow;
+        color: rgba(44, 62, 80,1.0);
+        font-size: 20px;
+      }
+      .choosebox{
+        display: flex;
+        justify-content: space-around;
+        margin:20px;
+        div{
+          cursor: pointer;
+          border: 1px solid black;
+          font-size: 20px;
+          border-radius: 3px;
+          padding:5px;
+        }
+        .yes:hover{
+          background-color: rgba(192, 57, 43,1.0);
+          color: rgba(236, 240, 241,1.0);
+        }
+        .no:hover{
+          background-color: rgba(149, 165, 166,1.0);
+        }
+      }
+    }
+  }
+
   .table{
     thead{
       font-size: 16px;
     }
-  }
-
-  .morebox{
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    .updateAndDelete{
-      cursor: pointer;
-      display: flex;
-      height: 35px;
-      font-weight: normal;
-      line-height: 35px;
-      .update{
-        border: 1px solid #2c3e50;
-        padding:0 10px;
-        border-radius: 3px 0 0 3px;
-        flex: 1;
-        &:hover{
-          background-color: #bdc3c7;
-        }
-      }
-      .delete{
-        border: 1px solid #2c3e50;
-        padding: 0 10px;
-        border-radius: 0 3px 3px 0;
-        border-left: none;
-        flex: 1;
-        &:hover{
-          background-color: #bdc3c7;
-        }
-      }
-    }
-    .more{
-      a{
-        padding:0;
-        margin:0;
-        height:25px;
-        width: 30px;
-        line-height: 25px;
-        border:1px solid #34495e;
-        background-color: transparent;
-        border-radius: 3px;
-        font-size: 20px;
-        &:hover{
-          background-color: #bdc3c7;
-        }
-      }
-    }
-  }
-  table{
     .lastcol{
       padding:0;
       width: 140px;
@@ -149,6 +171,54 @@ export default {
       td{
         height: 40px;
         line-height: 40px;
+      }
+      .morebox{
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+        .updateAndDelete{
+          cursor: pointer;
+          display: flex;
+          height: 35px;
+          font-weight: normal;
+          line-height: 35px;
+          .update{
+            border: 1px solid #2c3e50;
+            padding:0 10px;
+            border-radius: 3px 0 0 3px;
+            flex: 1;
+            &:hover{
+              background-color: #bdc3c7;
+            }
+          }
+          .delete{
+            border: 1px solid #2c3e50;
+            padding: 0 10px;
+            border-radius: 0 3px 3px 0;
+            border-left: none;
+            flex: 1;
+            &:hover{
+              background-color: #bdc3c7;
+            }
+          }
+        }
+        .more{
+          a{
+            padding:0;
+            margin:0;
+            height:25px;
+            width: 30px;
+            line-height: 25px;
+            border:1px solid #34495e;
+            background-color: transparent;
+            border-radius: 3px;
+            font-size: 20px;
+            &:hover{
+              background-color: #bdc3c7;
+            }
+          }
+        }
       }
     }
   }

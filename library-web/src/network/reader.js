@@ -72,3 +72,12 @@ export function queryreader(user){
         }
     })
 }
+
+export function deletereader(cardnum){
+    return post({
+        url:'/deleteUser',
+        params:{
+            cardnum
+        }
+    })
+}
