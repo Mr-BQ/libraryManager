@@ -71,6 +71,10 @@
         where userCardNum = #{userCardNum}
     </update>
 
+    <delete id="deleteUser" parameterType="String">
+        delete from user where userCardNum = #{cardnum}
+    </delete>
+
 
 
 </mapper>

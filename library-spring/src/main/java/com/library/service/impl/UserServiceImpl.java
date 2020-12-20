@@ -71,4 +71,9 @@ public class UserServiceImpl implements UserService {
         return userDao.queryUser(user);
     }
 
+    @Override
+    public int deleteUser(String cardnum){
+        return this.userDao.deleteUser(cardnum);
+    }
+
 }

@@ -106,4 +106,10 @@ public class UserController {
         return users;
     }
 
+    @RequestMapping("/deleteUser")
+    @ResponseBody
+    public int deleteUser(String cardnum){
+        return this.userService.deleteUser(cardnum);
+    }
+
 }
