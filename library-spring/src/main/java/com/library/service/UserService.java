@@ -16,4 +16,5 @@ public interface UserService {
     public Manager checkin(String username, String password);
     public int addUser(User user);
     public int updateuser(User user);
+    public List<User> queryUser(User user);
 }

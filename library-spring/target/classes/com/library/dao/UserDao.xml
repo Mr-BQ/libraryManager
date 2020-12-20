@@ -31,6 +31,33 @@
         select * from user where grade = #{grade}
     </select>
 
+    <select id="queryUser" parameterType="User" resultType="User">
+        select * from user
+        <where>
+            <if test="userCardNum != ''">
+                and userCardNum = #{userCardNum}
+            </if>
+            <if test="userName != ''">
+                and userName like concat('%',#{userName},'%')
+            </if>
+            <if test="userSex != ''">
+                and userSex = #{userSex}
+            </if>
+            <if test="userDepa != ''">
+                and userDepa = #{userDepa}
+            </if>
+            <if test="userClass != ''">
+                and userClass = #{userClass}
+            </if>
+            <if test="Grade != ''">
+                and grade = #{Grade}
+            </if>
+            <if test="userBorrowNum != ''">
+                and userBorrowNum = #{userBorrowNum}
+            </if>
+        </where>
+    </select>
+
     <select id="checkin"  resultType="Manager">
         select * from manager where username = #{arg0} and password = #{arg1}
     </select>

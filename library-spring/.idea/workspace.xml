@@ -16,19 +16,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/library/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/service/UserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/library/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/library/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/library/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/library/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/dao/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/library/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/library/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/dao/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library-web/src/network/reader.js" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/network/reader.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library-web/src/views/reader/AllReaders.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/views/reader/AllReaders.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../library-web/src/views/reader/QueryReader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/views/reader/QueryReader.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +198,8 @@
       <workItem from="1608216561136" duration="2117000" />
       <workItem from="1608265936011" duration="2845000" />
       <workItem from="1608300966445" duration="3339000" />
-      <workItem from="1608356544045" duration="8430000" />
+      <workItem from="1608356544045" duration="8479000" />
+      <workItem from="1608432036924" duration="4009000" />
     </task>
     <servers />
   </component>

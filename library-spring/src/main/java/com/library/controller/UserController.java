@@ -101,9 +101,9 @@ public class UserController {
     @ResponseBody
     public List<User> queryUser(User user){
         System.out.println(user);
-        System.out.println(user.getUserName() == null);
-
-        return null;
+        List<User> users = this.userService.queryUser(user);
+        System.out.println(users.size());
+        return users;
     }
 
 }

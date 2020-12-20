@@ -66,4 +66,9 @@ public class UserServiceImpl implements UserService {
         return this.userDao.updateuser(user);
     }
 
+    @Override
+    public List<User> queryUser(User user){
+        return userDao.queryUser(user);
+    }
+
 }
