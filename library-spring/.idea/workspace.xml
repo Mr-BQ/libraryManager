@@ -11,21 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="be37c803-2ad1-4795-b4f6-454e2d5f767e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/library/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/library/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/library/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/dao/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/library/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/library/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/library/service/impl/UserServiceImpl.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/dao/UserDao.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/dao/UserDao.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/dao/UserDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/dao/UserDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/service/UserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/library-spring-1.0-SNAPSHOT/WEB-INF/classes/com/library/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library-web/src/views/book/AllBooks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/views/book/AllBooks.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,6 +84,19 @@
     </key>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Tomcat 8.5.32" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.32" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
@@ -210,7 +210,9 @@
       <workItem from="1608300966445" duration="3339000" />
       <workItem from="1608356544045" duration="8479000" />
       <workItem from="1608432036924" duration="4028000" />
-      <workItem from="1608447005596" duration="2221000" />
+      <workItem from="1608447005596" duration="2858000" />
+      <workItem from="1608519422019" duration="933000" />
+      <workItem from="1608535487497" duration="438000" />
     </task>
     <servers />
   </component>
