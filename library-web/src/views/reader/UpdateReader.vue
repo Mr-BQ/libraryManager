@@ -1,6 +1,6 @@
 <template>
   <div class="updatereader">
-    <div class="text" >Now you are <strong>updating</strong>updating a reader, please input the reader's information below.Note that some items can't be updated!</div>
+    <div class="text" >Now you are <strong>updating</strong> a reader, please input the reader's information below.Note that some items can't be updated!</div>
     <div class="input">
       <div class="form-group cardnum">
         <div class="inputarea">

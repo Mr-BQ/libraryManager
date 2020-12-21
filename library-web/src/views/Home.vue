@@ -14,31 +14,31 @@
     <div class="mid">
       <div class="menu">
         <ul class="nav nav-pills nav-stacked">
-          <li :class="{active:currentactive===0}" @click="listclick(0)">
+          <li :class="{active:this.$store.state.currentactive===0}" @click="listclick(0)">
             <a href="javascript:;">
-              <span :class="{glyphicon:true,'glyphicon-menu-right':currentactive!==0,'glyphicon-menu-down':currentactive===0}" aria-hidden="true"></span> Reader Management
+              <span :class="{glyphicon:true,'glyphicon-menu-right':this.$store.state.currentactive!==0,'glyphicon-menu-down':this.$store.state.currentactive===0}" aria-hidden="true"></span> Reader Management
             </a>
-            <ul class="nav nav-pills nav-stacked sublist" :class="{activelist:currentactive===0,disactivelist:currentactive!==0}">
+            <ul class="nav nav-pills nav-stacked sublist" :class="{activelist:this.$store.state.currentactive===0,disactivelist:this.$store.state.currentactive!==0}">
               <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='00'}" @click="sublistclick('00')">See All Readers</a></li>
               <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='01'}" @click="sublistclick('01')">Query Reader</a></li>
               <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='02'}" @click="sublistclick('02')">Add Reader</a></li>
             </ul>
           </li>
-          <li :class="{active:currentactive===1}" @click="listclick(1)">
+          <li :class="{active:this.$store.state.currentactive===1}" @click="listclick(1)">
             <a href="javascript:;">
-              <span :class="{glyphicon:true,'glyphicon-menu-right':currentactive!==1,'glyphicon-menu-down':currentactive===1}" aria-hidden="true"></span> Book Management
+              <span :class="{glyphicon:true,'glyphicon-menu-right':this.$store.state.currentactive!==1,'glyphicon-menu-down':this.$store.state.currentactive===1}" aria-hidden="true"></span> Book Management
             </a>
-            <ul class="nav nav-pills nav-stacked sublist" :class="{activelist:currentactive===1,disactivelist:currentactive!==1}">
+            <ul class="nav nav-pills nav-stacked sublist" :class="{activelist:this.$store.state.currentactive===1,disactivelist:this.$store.state.currentactive!==1}">
               <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='10'}" @click="sublistclick('10')">See All Books</a></li>
               <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='11'}" @click="sublistclick('11')">Query Book</a></li>
               <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='12'}" @click="sublistclick('12')">Add Book</a></li>
             </ul>
           </li>
-          <li :class="{active:currentactive===2}" @click="listclick(2)">
+          <li :class="{active:this.$store.state.currentactive===2}" @click="listclick(2)">
             <a href="javascript:;">
-              <span :class="{glyphicon:true,'glyphicon-menu-right':currentactive!==2,'glyphicon-menu-down':currentactive===2}" aria-hidden="true"></span> Borrow Management
+              <span :class="{glyphicon:true,'glyphicon-menu-right':this.$store.state.currentactive!==2,'glyphicon-menu-down':this.$store.state.currentactive===2}" aria-hidden="true"></span> Borrow Management
             </a>
-            <ul class="nav nav-pills nav-stacked sublist" :class="{activelist:currentactive===2,disactivelist:currentactive!==2}">
+            <ul class="nav nav-pills nav-stacked sublist" :class="{activelist:this.$store.state.currentactive===2,disactivelist:this.$store.state.currentactive!==2}">
               <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='20'}" @click="sublistclick('20')">See All Books</a></li>
               <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='21'}" @click="sublistclick('21')">Query Book</a></li>
               <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='22'}" @click="sublistclick('22')">Add Book</a></li>
@@ -59,12 +59,11 @@ export default {
   data(){
     return{
       uname:'shilei',
-      currentactive:0,
     }
   },
   methods:{
     listclick(index){
-      this.currentactive = index
+      this.$store.commit('changeCurrentactive',index)
 
     },
     sublistclick(index){

@@ -183,10 +183,6 @@ export default {
   },
   mounted(){
     this.$store.commit('changeSubactive','01')
-    getallreaders().then(res=>{
-      this.list = res
-      console.log(this.list);
-    })
   },
   computed:{
     warn(){
