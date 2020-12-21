@@ -10,9 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="be37c803-2ad1-4795-b4f6-454e2d5f767e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/2ce20d61-a97f-4126-a131-246d943d386c.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/2ce20d61-a97f-4126-a131-246d943d386c.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/library/dao/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library-web/src/network/reader.js" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/network/reader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library-web/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library-web/src/views/Home.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/views/Home.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library-web/src/views/book/AddBook.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/views/book/AddBook.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../library-web/src/views/book/AllBooks.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/views/book/AllBooks.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library-web/src/views/book/QueryBook.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/views/book/QueryBook.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../library-web/src/views/reader/QueryReader.vue" beforeDir="false" afterPath="$PROJECT_DIR$/../library-web/src/views/reader/QueryReader.vue" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,19 +90,6 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Tomcat 8.5.32" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 8.5.32" ALTERNATIVE_JRE_ENABLED="false">
       <option name="OPEN_IN_BROWSER_URL" value="http://localhost:8081/" />
       <option name="UPDATE_ON_FRAME_DEACTIVATION" value="true" />
@@ -212,7 +205,9 @@
       <workItem from="1608432036924" duration="4028000" />
       <workItem from="1608447005596" duration="2858000" />
       <workItem from="1608519422019" duration="933000" />
-      <workItem from="1608535487497" duration="438000" />
+      <workItem from="1608535487497" duration="486000" />
+      <workItem from="1608535978956" duration="5905000" />
+      <workItem from="1608545914914" duration="6160000" />
     </task>
     <servers />
   </component>

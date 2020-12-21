@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.library.dao.BookDao">
+    <select id="findAllBook" resultType="Book">
+        select * from book;
+    </select>
+
+    <select id="queryBook" parameterType="Book" resultType="Book">
+        select * from book
+        <where>
+            <if test="bookISBN != ''">
+                and bookISBN = #{bookISBN}
+            </if>
+            <if test="bookName != ''">
+                and bookName like concat('%',#{bookName},'%')
+            </if>
+            <if test="bookAuthor != ''">
+                and bookAuthor like concat('%',#{bookAuthor},'%')
+            </if>
+            <if test="publishHouse != ''">
+                and publishHouse like concat('%',#{publishHouse},'%')
+            </if>
+            <if test="publishDate != ''">
+                and publishDate = #{publishDate}
+            </if>
+        </where>
+    </select>
+
+    <select id="checkISBN" parameterType="String" resultType="Book">
+        select * from book where bookISBN = #{isbn}
+    </select>
+
+
+    <insert id="addBook" parameterType="Book">
+        insert into book values(null,#{bookISBN},#{bookName},#{bookAuthor},#{publishHouse},#{publishDate},#{price},#{remain})
+    </insert>
+
+    <update id="updateBook" parameterType="Book">
+        update book set price = #{price} ,remain = #{remain} where bookISBN = #{bookISBN}
+    </update>
+
+    <delete id="deleteBook" parameterType="String">
+        delete from book where bookISBN = #{isbn}
+    </delete>
+</mapper>
