@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.library.dao.BorrowDao">
+    <select id="findAllBorrow" resultType="Borrow">
+        select id,userCardNum,userName,bookISBN,bookName,borrowDate,dateToReturn,returnDate from borrow,user,book
+        where borrow.userId = user.userid and borrow.bookId = book.bookId
+    </select>
+
+    <select id="queryBorrow" parameterType="Borrow" resultType="Borrow">
+        select id,userCardNum,userName,bookISBN,bookName,borrowDate,dateToReturn,returnDate from borrow,user,book
+        <where>
+            <if test="userCardNum != ''">
+                and user.userCardNum = #{userCardNum}
+            </if>
+
+            <if test="userName != ''">
+                and user.userName = #{userName}
+            </if>
+
+            <if test="bookISBN != ''">
+                and book.bookISBN = #{bookISBN}
+            </if>
+
+            <if test="bookName != ''">
+                and book.bookName = #{bookName}
+            </if>
+
+            <if test="borrowDate != ''">
+                and borrowDate = #{borrowDate}
+            </if>
+            and borrow.userId = user.userid and borrow.bookId = book.bookId
+        </where>
+    </select>
+
+    <select id="checkRemain" parameterType="String" resultType="String">
+        select remain from book where bookISBN = #{isbn}
+    </select>
+
+    <select id="checkBorrownum" parameterType="String" resultType="String">
+        select userBorrowNum from user where userCardNum = #{cardnum}
+    </select>
+
+    <select id="getbookID" parameterType="String" resultType="Integer">
+        select bookId from book where bookISBN = #{isbn}
+    </select>
+
+    <select id="getuserID" parameterType="String" resultType="Integer">
+        select userid from user where userCardNum = #{cardnum}
+    </select>
+
+    <insert id="addBorrow" parameterType="BorrowRecord">
+        insert into borrow values(null,#{userId},#{bookId},#{borrowDate},#{dateToReturn},null)
+    </insert>
+
+    <update id="remainSubone" parameterType="Integer">
+        update book set remain = remain - 1 where bookId = #{id}
+    </update>
+
+    <update id="borrowNumSubone" parameterType="Integer">
+        update user set userBorrowNum = userBorrowNum - 1 where userid = #{id};
+    </update>
+
+
+
+
+
+
+
+</mapper>
+
+
+
