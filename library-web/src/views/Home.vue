@@ -8,7 +8,7 @@
       <div class="user">
         <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
         <span>{{uname}}</span>
-        <button type="button" class="btn btn-default">sign out</button>
+        <button type="button" class="btn btn-default" @click="signout">sign out</button>
       </div>
     </div>
     <div class="mid">
@@ -59,7 +59,6 @@ export default {
   name: "Home",
   data(){
     return{
-      uname:'shilei',
     }
   },
   methods:{
@@ -81,6 +80,15 @@ export default {
         case '22':this.$router.replace('/home/borrow/borrow');break;
         case '23':this.$router.replace('/home/borrow/return');break;
       }
+    },
+    signout(){
+      window.sessionStorage.removeItem('username')
+      this.$router.replace('/login')
+    }
+  },
+  computed:{
+    uname(){
+      return window.sessionStorage.getItem('username')
     }
   }
 }

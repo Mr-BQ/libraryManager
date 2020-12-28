@@ -51,7 +51,8 @@ export default {
     signin(){
       checkin(this.username,this.password).then(res=>{
         if(res == "yes"){
-          alert("sign in successfully！")
+          window.sessionStorage.setItem('username',this.username)
+          this.$router.replace('/home')
         }else{
           this.wronginput = true;
           this.logopic = 2;
