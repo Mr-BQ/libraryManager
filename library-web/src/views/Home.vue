@@ -79,6 +79,7 @@ export default {
         case '20':this.$router.replace('/home/borrow/allborrow');break;
         case '21':this.$router.replace('/home/borrow/queryborrow');break;
         case '22':this.$router.replace('/home/borrow/borrow');break;
+        case '23':this.$router.replace('/home/borrow/return');break;
       }
     }
   }

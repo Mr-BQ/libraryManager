@@ -36,3 +36,10 @@ export function addborrow(borrow){
         params:borrow
     })
 }
+
+export function returnBook(borrow){
+    return post({
+        url:'/returnBook',
+        params:borrow
+    })
+}

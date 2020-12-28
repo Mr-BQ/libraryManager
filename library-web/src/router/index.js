@@ -62,6 +62,10 @@ const homeroutes=[
   {
     path:'borrow/borrow',
     component:() => import('@/views/borrow/Borrow')
+  },
+  {
+    path:'borrow/return',
+    component:() => import('@/views/borrow/Return')
   }
 
 
