@@ -50,7 +50,20 @@ const homeroutes=[
   {
     path:'book/updatebook/:isbn',
     component:() => import('@/views/book/UpdateBook')
+  },
+  {
+    path:'borrow/allborrow',
+    component:() => import('@/views/borrow/BorrowRecords')
+  },
+  {
+    path:'borrow/queryborrow',
+    component:() => import('@/views/borrow/Query')
+  },
+  {
+    path:'borrow/borrow',
+    component:() => import('@/views/borrow/Borrow')
   }
+
 
 ]
 

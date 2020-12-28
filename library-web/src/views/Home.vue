@@ -39,9 +39,10 @@
               <span :class="{glyphicon:true,'glyphicon-menu-right':this.$store.state.currentactive!==2,'glyphicon-menu-down':this.$store.state.currentactive===2}" aria-hidden="true"></span> Borrow Management
             </a>
             <ul class="nav nav-pills nav-stacked sublist" :class="{activelist:this.$store.state.currentactive===2,disactivelist:this.$store.state.currentactive!==2}">
-              <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='20'}" @click="sublistclick('20')">See All Books</a></li>
-              <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='21'}" @click="sublistclick('21')">Query Book</a></li>
-              <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='22'}" @click="sublistclick('22')">Add Book</a></li>
+              <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='20'}" @click="sublistclick('20')">Borrowing Records</a></li>
+              <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='21'}" @click="sublistclick('21')">Query</a></li>
+              <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='22'}" @click="sublistclick('22')">Borrow</a></li>
+              <li role="presentation"><a href="javascript:;" :class="{active:this.$store.state.subactive==='23'}" @click="sublistclick('23')">Return</a></li>
             </ul>
           </li>
         </ul>
@@ -75,6 +76,9 @@ export default {
         case '10':this.$router.replace('/home/book/allbooks');break;
         case '11':this.$router.replace('/home/book/querybook');break;
         case '12':this.$router.replace('/home/book/addbook');break;
+        case '20':this.$router.replace('/home/borrow/allborrow');break;
+        case '21':this.$router.replace('/home/borrow/queryborrow');break;
+        case '22':this.$router.replace('/home/borrow/borrow');break;
       }
     }
   }
