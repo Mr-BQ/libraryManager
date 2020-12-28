@@ -11,23 +11,23 @@
     <select id="queryBorrow" parameterType="Borrow" resultType="Borrow">
         select id,userCardNum,userName,bookISBN,bookName,borrowDate,dateToReturn,returnDate from borrow,user,book
         <where>
-            <if test="userCardNum != ''">
+            <if test="userCardNum != '' and userCardNum != null">
                 and user.userCardNum = #{userCardNum}
             </if>
 
-            <if test="userName != ''">
+            <if test="userName != '' and userName != null">
                 and user.userName = #{userName}
             </if>
 
-            <if test="bookISBN != ''">
+            <if test="bookISBN != '' and bookISBN != null">
                 and book.bookISBN = #{bookISBN}
             </if>
 
-            <if test="bookName != ''">
+            <if test="bookName != '' and bookName != null">
                 and book.bookName = #{bookName}
             </if>
 
-            <if test="borrowDate != ''">
+            <if test="borrowDate != '' and borrowDate != null">
                 and borrowDate = #{borrowDate}
             </if>
             and borrow.userId = user.userid and borrow.bookId = book.bookId
@@ -62,6 +62,17 @@
         update user set userBorrowNum = userBorrowNum - 1 where userid = #{id};
     </update>
 
+    <update id="remainAddone" parameterType="Integer">
+        update book set remain = remain + 1 where bookId = #{id}
+    </update>
+
+    <update id="borrowNumAddone" parameterType="Integer">
+        update user set userBorrowNum = userBorrowNum + 1 where userid = #{id};
+    </update>
+
+    <update id="returnBook" parameterType="BorrowRecord">
+        update borrow set returnDate = #{returnDate} where bookId = #{bookId} and userId = #{userId}
+    </update>
 
 
 

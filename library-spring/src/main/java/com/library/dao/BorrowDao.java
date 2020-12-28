@@ -15,4 +15,7 @@ public interface BorrowDao {
     public int getuserID(String cardnum);
     public int remainSubone(Integer id);
     public int borrowNumSubone(Integer id);
+    public int remainAddone(Integer id);
+    public int borrowNumAddone(Integer id);
+    public int returnBook(BorrowRecord borrowRecord);
 }

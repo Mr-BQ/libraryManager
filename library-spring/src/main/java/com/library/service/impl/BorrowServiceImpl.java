@@ -61,4 +61,18 @@ public class BorrowServiceImpl implements BorrowService {
         return this.borrowDao.borrowNumSubone(id);
     }
 
+    @Override
+    public int remainAddone(Integer id){
+        return this.borrowDao.remainAddone(id);
+    }
+
+    @Override
+    public int borrowNumAddone(Integer id){
+        return this.borrowDao.borrowNumAddone(id);
+    }
+
+    @Override
+    public int returnBook(BorrowRecord borrowRecord){
+        return this.borrowDao.returnBook(borrowRecord);
+    }
 }

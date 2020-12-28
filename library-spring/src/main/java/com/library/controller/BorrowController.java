@@ -68,5 +68,28 @@ public class BorrowController {
         return res;
     }
 
+    @RequestMapping("/returnBook")
+    @ResponseBody
+    public int returnBook(Borrow borrow){
+        int res = this.borrowService.queryBorrow(borrow).size();
+        if(res == 0){
+            return 0;
+        }
+        if(this.borrowService.queryBorrow(borrow).get(0).getReturnDate() != null){
+            return -1;
+        }
+        Integer bookid = this.borrowService.getbookID(borrow.getBookISBN());
+        Integer userid = this.borrowService.getuserID(borrow.getUserCardNum());
+        BorrowRecord br = new BorrowRecord();
+        br.setBookId(bookid);
+        br.setUserId(userid);
+        SimpleDateFormat sdf = new SimpleDateFormat ("yyyy-MM-dd");
+        br.setReturnDate(sdf.format(new Date()));
+        this.borrowService.returnBook(br);
+        this.borrowService.remainAddone(this.borrowService.getbookID(borrow.getBookISBN()));
+        this.borrowService.borrowNumAddone(this.borrowService.getuserID(borrow.getUserCardNum()));
+        return 1;
+    }
+
 
 }
